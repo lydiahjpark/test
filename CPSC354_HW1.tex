@@ -1,0 +1,168 @@
+**Level 5**
+**Lean Proof**: [
+    \documentclass{article}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{listings}  
+    
+    \lstset{  
+      language=Lean,
+      basicstyle=\ttfamily,
+      keywordstyle=\color{blue},
+      commentstyle=\color{gray},
+      stringstyle=\color{green},
+    }
+    
+    \begin{document}
+    
+    \section*{Proof in Lean}
+    
+    We want to prove the following statement in Lean:
+    
+    \[
+    a + (b + 0) + (c + 0) = a + b + c
+    \]
+    
+    Here is the proof in Lean code:
+    
+    \begin{lstlisting}
+    example (a b c : ℕ) : a + (b + 0) + (c + 0) = a + b + c :=
+    begin
+      rw add_zero,
+      rw add_zero,
+      refl,
+    end
+    \end{lstlisting}
+    
+    \end{document}
+    
+
+]
+
+**level 5 explanation**: [ 'rw [add_zero]' simplifies the expression b + 0 to b, based on the theorem that ading zero to any number returns that number. the second application simplifies c + 0 in the same manner.
+by appplying these epxressions a + (b + 0) + (c + 0) is reduced to a + b + c, which defines that proof.]
+
+**Level 6**
+*Lean Proof**: [
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}  
+
+\lstset{  
+  language=Lean,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{green},
+}
+
+\begin{document}
+
+\section*{Proof in Lean with Precision Rewriting}
+
+
+\[
+a + (b + 0) + (c + 0) = a + b + c
+\]
+
+
+\begin{lstlisting}
+example (a b c : ℕ) : a + (b + 0) + (c + 0) = a + b + c :=
+begin
+  rw add_zero,
+  rw add_zero c,
+  refl,
+end
+\end{lstlisting}
+
+\end{document}
+
+]
+
+**Level 7**
+*Lean Proof**: [
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+
+\lstset{
+  language=Lean,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{blue},
+  stringstyle=\color{green},
+  commentstyle=\color{gray},
+  breaklines=true
+}
+
+\begin{document}
+
+\section*{Lean Proof: succ\_eq\_add\_one}
+
+We aim to prove that for all natural numbers \(n\), the successor of \(n\) is equal to \(n + 1\):
+
+\[
+\text{succ } n = n + 1
+\]
+
+
+\begin{lstlisting}
+theorem succ_eq_add_one (n : ℕ) : succ n = n + 1 :=
+begin
+  rw add_succ,
+  refl,
+end
+\end{lstlisting}
+
+\end{document}
+
+]
+
+**Level 8**
+*Lean Proof**: [
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+  language=Lean,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{blue},
+  stringstyle=\color{green},
+  commentstyle=\color{gray},
+  breaklines=true
+}
+
+\begin{document}
+
+\section*{Lean Proof: \(2 + 2 = 4\)}
+
+prove that \(2 + 2 = 4\) in natural numbers:
+
+\[
+2 + 2 = 4
+\]
+
+
+\begin{lstlisting}
+example : (2 : ℕ) + 2 = 4 :=
+begin
+  rw [two_eq_succ_one],
+  nth_rewrite 2 [two_eq_succ_one],
+  rw [succ_add],
+  refl,
+end
+\end{lstlisting}
+
+\end{document}
+
+]
+
+
+
+
+
+
